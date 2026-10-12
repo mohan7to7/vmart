@@ -46,6 +46,13 @@ public class Cart {
     protected Cart() {
     }
 
+    public static Cart createCustomerCart(Long userId) {
+        Cart cart = new Cart();
+        cart.setUserId(userId);
+        cart.setStatus("ACTIVE");
+        return cart;
+    }
+
     @PrePersist
     protected void onCreate() {
         Instant now = Instant.now();
