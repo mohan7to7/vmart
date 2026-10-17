@@ -43,7 +43,7 @@ public class Cart {
     @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
 
-    protected Cart() {
+    public Cart() {
     }
 
     public static Cart createCustomerCart(Long userId) {
