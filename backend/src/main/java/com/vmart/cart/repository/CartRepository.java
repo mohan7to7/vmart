@@ -1,8 +1,10 @@
 package com.vmart.cart.repository;
 
 import com.vmart.cart.entity.Cart;
+import com.vmart.cart.entity.CartItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface CartRepository extends JpaRepository<Cart, Long> {
@@ -13,4 +15,5 @@ public interface CartRepository extends JpaRepository<Cart, Long> {
             String guestTokenHash,
             String status
     );
+    List<CartItem> findAllByCartId(Long cartId);
 }
